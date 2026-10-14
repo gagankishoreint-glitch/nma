@@ -1,0 +1,5 @@
+# Debug ONLY: randomly initialized frozen model.
+backend: tiny
+dim: 48
+layers: 2
+heads: 4

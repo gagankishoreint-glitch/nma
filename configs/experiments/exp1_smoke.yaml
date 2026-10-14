@@ -1,0 +1,30 @@
+# Offline validation ONLY. Random tiny base, not pretrained GPT-2.
+base:
+  backend: tiny
+  dim: 48
+  layers: 2
+  heads: 4
+memory:
+  num_heads: 4
+  prefix_length: 4
+  gate_threshold: 0.5
+  temporal: false
+knn:
+  k: 4
+  temperature: 1.0
+  interpolation: 0.9
+experiment:
+  seeds: [0, 1, 2, 3, 4]
+  num_facts: 10
+  calibration_facts: 24
+  calibration_steps: 120
+  gate_loss_weight: 1.0
+  sparsity: 0.01
+  lr: 0.003
+  ft_lr: 0.003
+  ft_steps: 12
+  max_new_tokens: 12
+  distractors: true
+  device: cpu
+  cpu_threads: 1
+  methods: [aomm, aomm_no_gate, aomm_temporal, knn_lm, last_layer_ft, no_memory]

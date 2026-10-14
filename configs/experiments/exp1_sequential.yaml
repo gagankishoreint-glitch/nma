@@ -1,0 +1,29 @@
+# Planned research run. Requires locally available genuine GPT-2 weights/tokenizer.
+base:
+  backend: gpt2
+  model_name: gpt2
+  local_files_only: true
+memory:
+  num_heads: 4
+  prefix_length: 4
+  gate_threshold: 0.5
+  temporal: false
+knn:
+  k: 8
+  temperature: 1.0
+  interpolation: 0.5
+experiment:
+  seeds: [0, 1, 2, 3, 4]
+  num_facts: 100
+  calibration_facts: 100
+  calibration_steps: 1000
+  gate_loss_weight: 1.0
+  sparsity: 0.01
+  lr: 0.001
+  ft_lr: 0.0001
+  ft_steps: 20
+  max_new_tokens: 24
+  distractors: true
+  device: cpu
+  cpu_threads: 2
+  methods: [aomm, aomm_no_gate, aomm_temporal, knn_lm, last_layer_ft, no_memory]

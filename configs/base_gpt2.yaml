@@ -1,0 +1,4 @@
+# Model section for exp1_sequential.yaml; no remote access required at run time.
+backend: gpt2
+model_name: gpt2
+local_files_only: true

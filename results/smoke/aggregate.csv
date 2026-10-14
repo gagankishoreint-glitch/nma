@@ -1,0 +1,9 @@
+,final_recall,final_recall,acquisition_recall,acquisition_recall,forgetting_rate,forgetting_rate,mean_curve_recall,mean_curve_recall,memory_entries,memory_entries
+,mean,std,mean,std,mean,std,mean,std,mean,std
+method,,,,,,,,,,
+aomm,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,10.0,0.0
+aomm_no_gate,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,20.0,0.0
+aomm_temporal,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,10.0,0.0
+knn_lm,0.8800000000000001,0.130384048104053,0.9400000000000001,0.054772255750516585,0.08888888888888888,0.09296222517045283,0.9075476190476189,0.05336514811898917,110.0,0.0
+last_layer_ft,0.1,0.0,0.14,0.0894427190999916,0.24444444444444446,0.19876159799998133,0.21570634920634918,0.04784630296567327,0.0,0.0
+no_memory,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0

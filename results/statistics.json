@@ -1,0 +1,43 @@
+[
+  {
+    "comparator": "aomm_no_gate",
+    "n_seeds": 5,
+    "mean_difference": 0.0,
+    "paired_t_p": null,
+    "status": "undefined: too few seeds or zero paired-difference variance",
+    "exploratory": true
+  },
+  {
+    "comparator": "aomm_temporal",
+    "n_seeds": 5,
+    "mean_difference": 0.0,
+    "paired_t_p": null,
+    "status": "undefined: too few seeds or zero paired-difference variance",
+    "exploratory": true
+  },
+  {
+    "comparator": "knn_lm",
+    "n_seeds": 5,
+    "mean_difference": -0.8800000000000001,
+    "paired_t_p": 0.00011234981625991717,
+    "status": "ok",
+    "exploratory": true,
+    "holm_p": 0.0005617490812995858
+  },
+  {
+    "comparator": "last_layer_ft",
+    "n_seeds": 5,
+    "mean_difference": -0.1,
+    "paired_t_p": null,
+    "status": "undefined: too few seeds or zero paired-difference variance",
+    "exploratory": true
+  },
+  {
+    "comparator": "no_memory",
+    "n_seeds": 5,
+    "mean_difference": 0.0,
+    "paired_t_p": null,
+    "status": "undefined: too few seeds or zero paired-difference variance",
+    "exploratory": true
+  }
+]

@@ -1,0 +1,7 @@
+{
+  "gpt2_local_available": false,
+  "error": "We couldn't connect to 'https://huggingface.co' to load this file, couldn't find it in the cached files and it looks like gpt2 is not the path to a directory containing a file named config.json.\nCheckout your internet connection or see how to run the library in offline mode at 'https://huggingface.co/docs/transformers/installation#offline-mode'.",
+  "python": "3.11.2",
+  "cuda_available": false,
+  "note": "Hugging Face is not on the sandbox outbound-host allowlist. No GPT-2 experiment run."
+}

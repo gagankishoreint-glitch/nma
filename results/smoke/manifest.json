@@ -1,0 +1,117 @@
+{
+  "backend": "tiny",
+  "total_seconds": 31.184403382000028,
+  "python": "3.11.2",
+  "torch": "2.2.2+cu121",
+  "device": "cpu",
+  "git_revision": "69db6ec628cfc494c82ba0a55cc2456c24242a77",
+  "seeds": [
+    {
+      "seed": 0,
+      "base_hash_before": "f0f096fbbc4963a740a146bc51e3906ef12269fe310ecbcb2b69d436007171ed",
+      "base_hash_after": "f0f096fbbc4963a740a146bc51e3906ef12269fe310ecbcb2b69d436007171ed",
+      "gate_calibration_accuracy": 1.0,
+      "calibration_seconds": 0.7642972030000692
+    },
+    {
+      "seed": 1,
+      "base_hash_before": "6ffe21573571d9db792869c466f7044fc5b646624a23ee3c1c443e4e95bf0337",
+      "base_hash_after": "6ffe21573571d9db792869c466f7044fc5b646624a23ee3c1c443e4e95bf0337",
+      "gate_calibration_accuracy": 1.0,
+      "calibration_seconds": 0.6852583840000079
+    },
+    {
+      "seed": 2,
+      "base_hash_before": "1d6b7713cd551c86d0e88e15127988a062d1a6a4859071f6baa5068689246271",
+      "base_hash_after": "1d6b7713cd551c86d0e88e15127988a062d1a6a4859071f6baa5068689246271",
+      "gate_calibration_accuracy": 1.0,
+      "calibration_seconds": 0.8769151789999796
+    },
+    {
+      "seed": 3,
+      "base_hash_before": "93199fa4df35c46da3a576bdade698bfb1308b239522330163613e4d02dbf382",
+      "base_hash_after": "93199fa4df35c46da3a576bdade698bfb1308b239522330163613e4d02dbf382",
+      "gate_calibration_accuracy": 1.0,
+      "calibration_seconds": 0.6662614570000187
+    },
+    {
+      "seed": 4,
+      "base_hash_before": "28fbf382b06b8c53041aa7d8443097b65bdfeb1a03ff41c8a54f95324c4b004b",
+      "base_hash_after": "28fbf382b06b8c53041aa7d8443097b65bdfeb1a03ff41c8a54f95324c4b004b",
+      "gate_calibration_accuracy": 1.0,
+      "calibration_seconds": 0.6383114459999888
+    }
+  ],
+  "config": {
+    "base": {
+      "backend": "tiny",
+      "dim": 48,
+      "layers": 2,
+      "heads": 4
+    },
+    "memory": {
+      "num_heads": 4,
+      "prefix_length": 4,
+      "gate_threshold": 0.5,
+      "temporal": false
+    },
+    "knn": {
+      "k": 4,
+      "temperature": 1.0,
+      "interpolation": 0.9
+    },
+    "experiment": {
+      "seeds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "num_facts": 10,
+      "calibration_facts": 24,
+      "calibration_steps": 120,
+      "gate_loss_weight": 1.0,
+      "sparsity": 0.01,
+      "lr": 0.003,
+      "ft_lr": 0.003,
+      "ft_steps": 12,
+      "max_new_tokens": 12,
+      "distractors": true,
+      "device": "cpu",
+      "cpu_threads": 1,
+      "methods": [
+        "aomm",
+        "aomm_no_gate",
+        "aomm_temporal",
+        "knn_lm",
+        "last_layer_ft",
+        "no_memory"
+      ]
+    }
+  },
+  "source_sha256": {
+    "src/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "src/data/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "src/data/synthetic_facts.py": "26fb4d6fddf78131dc1707c4fd6b1cb62bfa7c63f85f06505c8d7c9f743000a3",
+    "src/eval/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "src/eval/analyze.py": "39cc944eba72cea1d8bc966ccf03d5fd95e51b2f9f19a99c34039cbbb0e1707b",
+    "src/eval/metrics.py": "cf7719351066cbc3e36deff71e8df493bc3071b0c7700c8e077233241d9b98e5",
+    "src/models/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "src/models/aomm.py": "c1b90cc4be6911c73d23637b45c1f13b30b832879405b6acd0d0994fa7b3e76a",
+    "src/models/base.py": "793eae622e63bbdd22d51f4f6d4e150c75784bbd41664a4f9840879181d36b9a",
+    "src/models/retrieval.py": "a6d4b3ecd29a05176042ece0850b1227a66113bb09cba9ab79ada704971ce693",
+    "src/train/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "src/train/baselines.py": "a6eb81d37b0fcaa8ef13f7c3abac7194aa0b2cbc913d7548e1105b60bdc3a35f",
+    "src/train/train_aomm.py": "0eb4310cdcf68e11603ae5e7f94419cb1154914b1bed8726cb83c5f2f341b848",
+    "src/utils/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "src/utils/logging.py": "d7973d7db11454d877a6c245c39d555fcf8112c99cd95b4d0ff46356630abb0f",
+    "src/utils/seed.py": "f1e1797c38f9778196cafb51298ca4da53376583333f95ba74af9be65cd7cb34",
+    "configs/base_gpt2.yaml": "f327c2a74cfdb965b2a803eae941f3fa284568916ff27ee6cb744bfc356804e8",
+    "configs/base_tiny.yaml": "3f887a7065e6144c879a9af92658955c15fe2ab87b6850cd62e789cd80a99742",
+    "configs/experiments/exp1_sequential.yaml": "8ba1b41c4b2bcf96d6bdeb77a11e9fdbb9379babba29e86025eaec17f5008023",
+    "configs/experiments/exp1_smoke.yaml": "21cad1aa293e7af120907b9817c87a5c906e5b5ee2600638a5c9e76d7e6c9f2f",
+    "scripts/run_exp1.sh": "347c755387dc341c787bfb69c77e25aab02b84105d7ca5eebf16ebd5c49769fb"
+  },
+  "note": "tiny = RANDOM frozen transformer, not GPT-2 evidence; ROME not run"
+}
