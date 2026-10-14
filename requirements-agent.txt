@@ -1,0 +1,5 @@
+# Optional REAL model dependencies. Install in the existing Python 3.11 venv.
+# CPU llama.cpp build by default; CUDA builds require the appropriate toolchain.
+-r requirements.txt
+llama-cpp-python>=0.3.2,<0.4
+sentence-transformers>=3.0,<3.2

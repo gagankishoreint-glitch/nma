@@ -1,3 +1,49 @@
+# Text-Only Native-Memory Agent — active iteration
+
+A separate experiment now lives in `agent.py`, `memory/`, `llm/`, and `prompts/`.
+It keeps the LLM text-only and compares weight-only neural slot memory against
+no memory and bounded raw context. It **does not** search audit logs or use a
+vector index for the native condition. See [MISSION.md](MISSION.md),
+[PROGRESS.md](PROGRESS.md), and [technical decisions](docs/NATIVE_AGENT.md).
+
+```bash
+# Offline plumbing ONLY: scripted transport + deterministic hash encoder
+PYTHON=.venv/bin/python bash scripts/run_agent.sh smoke
+
+# Optional genuine-model dependencies (not installed in this sandbox)
+.venv/bin/pip install -r requirements-agent.txt
+
+# Real mode: requires local files, passes stability gate BEFORE memory tasks
+PYTHON=.venv/bin/python bash scripts/run_agent.sh real \
+  --model /local/path/chat-model.gguf --encoder /local/path/all-MiniLM-L6-v2 \
+  --n-ctx 1024 --n-gpu-layers 0
+
+# Opt-in real behavioral tests; otherwise explicitly skipped
+AGENT_GGUF_PATH=/local/path/chat-model.gguf .venv/bin/python -m pytest -q tests/test_stability.py
+```
+
+This sandbox has no GPU or local model weights. **Real LLM stability is not run**;
+`results/stability_tests.json` honestly records four `not_run` tests, not four
+passes. `results/agent_log.csv` and `PROCEDURES.md` are explicitly scripted fixture
+artifacts. The fixture context baseline recalls the address; the cold neural
+codec abstains. These are engineering checks, not evidence about a 4B LLM/Titans.
+
+- `results/agent_smoke/`: scripted run, summaries, parameter hashes, environment.
+- `results/agent_real/`: blocked genuine-model preflight; no fabricated task logs.
+- `results/agent_manifest.json`: last completed agent run's provenance.
+- `results/agent_attempt_manifest.json`: latest attempt, including failures.
+- `results/stability_tests.json`: latest attempt's behavioral-test status.
+- `scripts/run_agent.sh` prints the mission on every invocation. Re-running a mode
+  replaces that mode's generated artifacts; use `--output` to preserve other runs.
+
+Default real mode is CPU. GPU offload needs working `nvidia-smi`, a CUDA-enabled
+llama.cpp build and target-hardware validation. The sampled 3.5-GiB stop guard is
+**not** a hard allocation cap. No LoRA, hidden-state extraction or production tool
+execution is implemented. The supplied Titans API, persona guarantees, and fixed
+VRAM estimates are not assumed true; see the decision record for corrections.
+
+---
+
 # Append-Only Learned Memory
 
 A research prototype testing whether a supervised write gate and append-only
@@ -11,7 +57,7 @@ those failure modes measurable; it does not claim to solve continual learning.
 **Five-seed CPU smoke test executed, not a GPT-2 research result.** The offline
 base is a randomly initialized 73,824-parameter transformer. AOMM failed to acquire
 answers (0% final exact recall); the kNN-style comparator achieved 88% ± 13%.
-This does not support the proposed superiority claim. See [PROGRESS.md](PROGRESS.md)
+This does not support the proposed superiority claim. See [archived progress](docs/APPEND_ONLY_PROGRESS.md)
 and [research decisions / next steps](docs/RESEARCH_PLAN.md).
 
 No GPT-2 weights are available in this sandbox, no GPU is present, and outbound

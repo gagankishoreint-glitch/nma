@@ -1,0 +1,75 @@
+{
+  "backend": "llama_cpp",
+  "config": {
+    "backend": "llama_cpp",
+    "model": null,
+    "encoder": null,
+    "output": null,
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "n_ctx": 1024,
+    "n_gpu_layers": 0,
+    "context_turns": 4,
+    "max_steps": 2
+  },
+  "environment": {
+    "torch": "2.2.2",
+    "llama-cpp-python": null,
+    "sentence-transformers": null,
+    "titans-torch": null,
+    "titans-pytorch": null,
+    "system_ram_total_mib": 3939.89453125,
+    "system_ram_available_mib": 3393.36328125,
+    "gguf_files_in_repo": []
+  },
+  "python": "3.11.2",
+  "torch": "2.2.2+cu121",
+  "scope": "synthetic real-LLM evaluation",
+  "status": "blocked_or_failed",
+  "error": "ValueError: Real mode requires --model LOCAL_GGUF and --encoder LOCAL_SENTENCE_TRANSFORMER_DIR",
+  "wall_seconds": 0.0006066810001357226,
+  "resources": {
+    "gpu_peak_mib": null,
+    "gpu_available": false,
+    "budget_mib": 3584,
+    "sampling_interval_seconds": 0.1,
+    "note": "Device-total samples include other processes and can miss transient peaks; not a hard allocation cap.",
+    "samples": [
+      {
+        "stage": "environment",
+        "monotonic_seconds": 1816.067509194,
+        "gpu_device_used_mib": null,
+        "peak_device_used_mib": null,
+        "peak_process_rss_mib": 351.625,
+        "measurement": "GPU telemetry unavailable"
+      }
+    ],
+    "telemetry_errors": []
+  },
+  "source_sha256": {
+    "memory/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "memory/encoder_bridge.py": "dec8f09e4b60e37617af69a68cf0fc25c252cc260be89c9a3fae690ff9512021",
+    "memory/orchestrator.py": "ed0ab4155555bfa21a36a437705b0626de1725a9f7d02ea643f98045eef54138",
+    "memory/procedures.py": "8776f8ade9c2d0c62424eb5c7ef4b6291fe66e4f33f33eda5574f7e87319d807",
+    "memory/titans_memory.py": "67db126e21f23c38fa773dc1d36edf351a470ce88b5c8a9e0e977518fb7df08c",
+    "llm/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "llm/scripted.py": "83333cae00c4645e2cb35d6e99bfdf01e96abfd1096f92f481c4c74eec9bd328",
+    "llm/stable_llm.py": "1823a5714315c04663df3db737cb077ac3ea12d34f285ca7965e8f67c88d7949",
+    "prompts/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "prompts/agent_system.txt": "4e8e11e24a79fc4e1d190c7f8a10987f8f6aaf1c4bece6edea177ea75c3e2f24",
+    "prompts/context.py": "bbd9ed0e2f5a3cab11a8c79b6b2c3e9b7b7a6e039357f9f6dceb429b0a4f4de7",
+    "prompts/procedure_extraction.py": "fac1f0ece95adb8070a81acbc1ca2b153c3b809e5490cf8f806e1e46c0acb571",
+    "agent.py": "48fbd5ef2a7fb6e674554e0ab373eec9423941f7fb9ff4a65efb2eb8c7565e95",
+    "MISSION.md": "12c88276e645fad3e847f25584000a7169c700fd3e0dd24682e549a8f96aca8f",
+    "requirements-agent.txt": "433ab9531f498cca38085ad4d6abb91e0e0158b88f802f987d2c19b3137006e9",
+    "scripts/run_agent.sh": "e419c6838e81095b3fae6df9b869d5746187ff34e682f1083495289fc57a0e66",
+    "src/data/restaurant_task.py": "431e6e1519e055c3f6c29cc071dc4fb9d8b2bdee9e2fb7a7593639eeda96b33c",
+    "src/eval/agent_stability.py": "94a500008ce039e05a2b65082307b837582146ef09fb3ec1b5ffea91a17cb52b",
+    "src/utils/agent_profile.py": "a7372c11eebd7649ba946a8f3e9327aed131e3c55f5094e931cf8050ee590edb"
+  }
+}

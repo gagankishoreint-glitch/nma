@@ -1,0 +1,28 @@
+{
+  "backend": "scripted",
+  "status": "not_run",
+  "all_passed": null,
+  "reason": "Scripted transport is not an LLM; no behavioral stability claim.",
+  "tests": [
+    {
+      "name": "tone_consistency",
+      "status": "not_run",
+      "passed": null
+    },
+    {
+      "name": "memory_does_not_become_persona",
+      "status": "not_run",
+      "passed": null
+    },
+    {
+      "name": "instruction_injection_ignored",
+      "status": "not_run",
+      "passed": null
+    },
+    {
+      "name": "goal_wins_over_memory",
+      "status": "not_run",
+      "passed": null
+    }
+  ]
+}

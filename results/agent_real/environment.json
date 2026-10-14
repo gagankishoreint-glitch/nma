@@ -1,0 +1,10 @@
+{
+  "torch": "2.2.2",
+  "llama-cpp-python": null,
+  "sentence-transformers": null,
+  "titans-torch": null,
+  "titans-pytorch": null,
+  "system_ram_total_mib": 3939.89453125,
+  "system_ram_available_mib": 3393.36328125,
+  "gguf_files_in_repo": []
+}

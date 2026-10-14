@@ -1,130 +1,153 @@
-# Progress — 2026-10-14
+# Progress — text-only native-memory agent — 2026-10-14
 
-## Summary
+## Bottom line
 
-Built and executed the narrow Experiment 1 prototype. **The smoke results do not
-support AOMM superiority.** This is a working research starting point, not a
-publishable result or a demonstration that append-only memory eliminates
-interference.
+Implemented the new agent as a separate experiment. **No genuine LLM stability or
+4GB-VRAM claim has been validated.** The available offline plumbing test succeeds
+with bounded raw context but the cold native neural codec abstains. That is not
+an empirical result about Titans or a 4B LLM.
 
-## What is implemented
+The previous GPT-2 append-only experiment and its original artifacts are preserved;
+its report is now [docs/APPEND_ONLY_PROGRESS.md](docs/APPEND_ONLY_PROGRESS.md).
 
-- Genuine GPT-2 loading path with frozen parameters and differentiable soft-prefix
-  injection; explicit failure if weights are missing.
-- Offline 73,824-parameter random transformer for pipeline validation only.
-- Learned key/value/query projections, four-vector prefix codec, supervised
-  sigmoid gate, preallocated detached append-only buffers, overflow errors.
-- Disjoint calibration/stream fictional facts, shuffled bindings, weather
-  distractors, multi-token answer generation and pre-exposure zero-shot checks.
-- No-memory, independent last-output-head FT, and exact token kNN-style controls;
-  gate-off and fixed-decay ablations. **None is labeled ROME.**
-- Five-seed CSVs, full configs/source hashes, before/after base checksums, wall
-  time, seed-level paired tests/Holm correction, six-curve figure, and notebook.
-- Oracle single-entry retrieval diagnostics and per-write gate decisions.
+## Built
 
-## Executed run
+- `MISSION.md`, printed first by `scripts/run_agent.sh` in both modes.
+- `memory/titans_memory.py`: single-step online associative MLP, frozen reads,
+  exact initial-state reset, loss logging, no retained gradient graphs. **Custom
+  Titans-inspired prototype, not the published Titans algorithm/library.**
+- A bounded learned UTF-8 decoder, so private values really must come from
+  neural parameters; no episode-vector search or hidden answer-codebook lookup.
+- `memory/encoder_bridge.py`: independent CPU/local sentence encoder; explicit
+  deterministic hash fixture for offline testing. No LLM hidden states.
+- Goal/slot routing, secondary generic procedures, isolated JSON extraction with
+  success/schema/domain checks and markdown-fence handling.
+- Text-only llama.cpp wrapper: fresh two-message calls, no adapters, hidden-state
+  hooks, soft prompts or LLM weight updates. Main policy is unchanged across
+  calls. Dynamic memory/procedure text is JSON **user data**, not interpolated
+  into the system role. The supplied template is retained in the prompt file.
+- Strict simulated tool executor: generated actions do not count as execution;
+  only verified outcomes may write facts or authorize procedure extraction.
+- Four real-model stability probes, including twenty repeated contract calls;
+  failed/unrun real stability prevents the real memory benchmark.
+- No-memory, N-turn raw-context, neural-only, full frozen-memory and full-system
+  conditions; seeded names/addresses, exact address-delivery scoring, per-step
+  surprise, recalled data, procedure, action, outcome, resource logs, and hashes.
+
+## What actually ran
 
 ```bash
-PYTHON=.venv/bin/python bash scripts/run_exp1.sh smoke
+PYTHON=.venv/bin/python bash scripts/run_agent.sh smoke
+.venv/bin/python -m pytest -q
 ```
 
-CPU, seeds 0–4, **10 facts per seed**, 24 calibration facts, 120 calibration steps,
-12 current-fact FT steps, and one weather distractor per fact. The base is random,
-not a pretrained GPT-2. Total experiment wall clock: **31.18 seconds**, including
-calibration and oracle diagnostics; package installation and analysis/plotting
-are excluded. This timing must not be extrapolated to GPT-2.
+**Scripted transport + hash encoder**, five worlds/seeds, three logical sessions
+within one process per condition, N=4 raw turns, at most two actions/session.
+No actual restaurant booking, message delivery, real-model generation, MiniLM
+encoding, or cross-process recovery was tested.
 
-Final exact-answer recall (mean ± sample SD over five seeds):
-
-| Method | Final recall | Acquisition recall | Mean peak-to-final forgetting |
+| Condition | Session 1 search | Session 2 booking | Session 3 exact address |
 |---|---:|---:|---:|
-| AOMM | 0.0% ± 0.0% | 0.0% | 0.0 points* |
-| AOMM, no gate | 0.0% ± 0.0% | 0.0% | 0.0 points* |
-| AOMM, fixed time decay | 0.0% ± 0.0% | 0.0% | 0.0 points* |
-| Token kNN-style | 88.0% ± 13.0% | 94.0% | 8.9 points |
-| Last-output-head FT | 10.0% ± 0.0% | 14.0% | 24.4 points |
-| No memory | 0.0% ± 0.0% | 0.0% | 0.0 points* |
+| No memory | 5/5 | 0/5 | 0/5 |
+| Context window | 5/5 | 5/5 | 5/5 |
+| Neural only | 5/5 | 0/5 | 0/5 |
+| Full, frozen memory | 5/5 | 0/5 | 0/5 |
+| Full, online memory | 5/5 | 0/5 | 0/5 |
 
-*Zero forgetting without acquisition is **not** retained knowledge. FT's mean
-recall curve falls from 80% after the first injection to 10% at the end, and its
-same-item forgetting is positive. kNN retains much better but also has positive
-same-item forgetting: adding records can change nearest-neighbor decisions.
+These outcomes validate harness/data-flow behavior, **not LLM performance**. The
+scripted fixture is a transparent finite-state context consumer. It has no access
+to hidden world truth. The neural condition returns low-confidence/unknown values;
+it cannot yet acquire name/address strings with this unpretrained, one-step codec.
+Its failure must not be used to reject Titans or claim context memory superiority
+in a real agent. One-step padding-dominated BCE and the confidence threshold are
+major confounds that need calibration/codec work before a scientific comparison.
 
-The exploratory paired final-recall test favors kNN over AOMM (AOMM−kNN = −0.88,
-raw p ≈ 0.000112; Holm p ≈ 0.000562). This is a tiny/random-model diagnostic, **not
-research evidence about GPT-2**, and cannot justify expanding the scope. Constant
-paired differences for other comparisons have undefined t-tests and are logged
-as null rather than invented significance.
+- 75 step rows written; all no-memory/context conditions have zero neural updates.
+- Full and neural-only each perform **three updates**: one per outcome, with the
+  two Session-1 slots batched into a single step. Their checksums change.
+- Frozen-memory checksums remain unchanged. Read/reset invariants pass unit tests.
+- The generic booking procedure from a separate successful synthetic warm-up is
+  present in every full-system Session-2 prompt. It contains no private address;
+  it cannot solve missing factual recall on its own.
+- `PROCEDURES.md` was generated, prominently labeled **scripted fixture**, and
+  exports the last full-condition seed's procedures. It is not a real LLM
+  extraction-quality result.
 
-### Diagnostic findings
+## Resources and environment
 
-- The gate accepted all 50 stream facts and rejected all 50 weather distractors.
-  This only validates an easy supervised relevance classifier, not learned
-  counterfactual memory utility.
-- AOMM stores 10 entries vs 20 for always-write; used tensor payload is 3,890 vs
-  7,780 bytes. Both preallocate 7,788 bytes, including the size buffer. **There is
-  no allocated-memory saving** in this implementation. kNN has 110 contextual
-  token entries / 22,000 payload bytes; Python object overhead is not counted.
-- Oracle single-entry prefixes still score **0% exact recall**. Mean answer NLL:
-  no memory 4.5567, learned retrieval 4.5747, oracle retrieval 4.5747. The attention
-  top-1 relevant-entry rate is 10% (chance among ten accepted facts). Both the
-  content/injection path and retrieval need work; gate rejection is not causing
-  this run's failure. Do not conclude that every prefix architecture must fail.
-- Frozen-base checksums match before/after all methods for every seed.
+- Actual host RAM: **3,939.9 MiB (~3.85 GiB)**, not the requested 16GB target.
+- GPU / measured VRAM: **unavailable / null**. There is no GPU in this sandbox;
+  do not interpret null as a measured zero or claim a 4GB-model fit.
+- Scripted-run process peak RSS: **372.3 MiB** (includes runtime/import overhead).
+- Post-import runner time: **0.120 seconds**. This excludes interpreter startup,
+  imports, installation and any real LLM/encoder loading. No GPU-time estimate.
+- Neural module: **90,352 parameters**, 361,408 FP32 parameter bytes, plus the
+  reset snapshot/temporary gradients/runtime. Even its 384→32→64 MLP alone has
+  14,432 parameters; the supplied “under 10K” estimate was incorrect.
+- PyTorch 2.2.2 is installed. `llama-cpp-python`, `sentence-transformers` and the
+  optional Titans libraries are absent; no GGUF/encoder weights are available.
+  Hugging Face is outside this sandbox's outbound allowlist.
 
-## Validation / bugs
+Real-mode preflight was also executed and correctly exited **2**, requiring local
+GGUF/encoder paths. Its environment, blocked status and source hashes are recorded
+in `results/agent_real/`. No real-model task CSV was fabricated.
 
-`python -m pytest -q`: **12 passed, 1 skipped**. Tests cover append immutability,
-overflow atomicity, reset, detached buffers, checkpoint round-trip, gate rejection,
-temporal masking, prefix/projection gradients, frozen weights, independent FT,
-no-future-fact logs, and deterministic end-to-end output.
+Real mode defaults to CPU, n_ctx=1024. Optional GPU offload requires `nvidia-smi`
+telemetry. Device-total sampling guards at 3,584 MiB, but cannot cap an allocation
+or guarantee observing every transient peak. It accounts for native llama.cpp
+memory unlike torch-only VRAM stats, and conservatively includes other workloads.
 
-The skipped integration test requires genuine GPT-2 weights. A local-only GPT-2
-load was attempted and failed because no checkpoint is cached. This sandbox has
-no CUDA device and cannot access Hugging Face. Details: `results/environment.json`.
-There was no silent model substitution.
+## Tests and stability status
 
-An all-future temporal attention row could have produced NaNs. The implementation
-now masks all-ineligible rows before softmax, returning zero context. The exact
-installed dependency set is recorded in `requirements-lock.txt`; `pip check`
-reported no broken requirements.
+**29 passed, 5 skipped.** Skips: four genuine-GGUF behavioral tests and the earlier
+GPT-2 integration test. Passing structural/mocked tests is not behavioral evidence.
 
-## Still missing / fairness limitations
+`results/stability_tests.json` correctly says:
 
-- **GPT-2 experiment not run.** The full 100-fact/five-seed config is a plan, not
-  a measured result. No 20-GPU-hour guarantee.
-- **Real ROME not run.** The official repo inspected has no GPT-2 124M config and
-  describes GPU-only operation. A validated 124M port is needed under this cap.
-  No fake ROME, MEMIT, full-model FT, EWC or TTT results are included.
-- AOMM receives extra calibration; kNN uses teacher-forced QA contexts at write
-  time while AOMM encodes statement vectors. FT also receives current QA
-  supervision. Warm-up, write-time encoding and bytes are **not matched**. No
-  causal superiority claim is justified by these controls.
-- Static, template-generated QA can reward string memorization. No paraphrase,
-  long-answer, adversarial-similarity, or realistic utility generalization test yet.
-- Time toggle is fixed/untrained; it does not test historical QA or G4.
-- No verified novelty review, formal paper, or Experiments 2–4. Those are deferred.
+- tone consistency: **not_run**
+- memory/persona injection: **not_run**
+- instruction injection: **not_run**
+- goal precedence: **not_run**
+- `all_passed: null`
 
-## Best next move
+A scripted backend is forbidden from certifying these tests. Providing an
+“all four passed” file without a model would fabricate evidence. Also, passing
+these narrow tests later would not prove general persona stability, privacy,
+robust prompt-injection resistance, or safety. “Tone” is an explicitly limited
+JSON-action consistency proxy, not a comprehensive linguistic classifier.
 
-**Fix acquisition before scaling retention experiments.** On a machine with local
-GPT-2 weights, first verify an oracle single-fact prefix can reconstruct unseen
-answers. Compare raw-text retrieved prefixes and longer/token-valued memory to
-isolate information bottlenecks. Only after that works, train retrieval with
-held-out binding episodes and match write-time information, calibration and byte
-budgets against kNN. Then preregister/freeze the protocol for five 100-fact seeds.
-Use an explicit validated editor baseline before making model-editing claims.
+Tests cover actual parameter updates, read immutability, exact reset, UTF-8
+round-trip/abstention, atomic oversized-write errors, one batch/one gradient step,
+no audit lookup, text-only transport/reset isolation, extraction validation and
+success gating, constrained tools, context baselines, frozen-memory ablation,
+real-benchmark stability gating, and the sampled VRAM guard.
 
-The sharper research question is whether learned writes improve the
-**retention–acquisition–storage trade-off**, not whether immutable storage proves
-forgetting has been eliminated. Detailed alternatives and milestones are in
-[`docs/RESEARCH_PLAN.md`](docs/RESEARCH_PLAN.md).
+## Best next steps
+
+1. **Obtain local GGUF + encoder weights on suitable hardware.** Install optional
+   dependencies, run real stability first, and retain failures/raw outputs. Start
+   with a small instruct GGUF rather than assume Qwen3-4B will fit or follow JSON.
+2. **Fix isolated neural acquisition before scaling.** Compare calibrated/pretrained
+   content decoding and a normalized-delta fast-weight control on held-out slot
+   values. Never make the native condition pass by covertly looking up audit text.
+3. Only after acquisition works: run the same real-model conditions, including
+   frozen-memory/neural-only attribution ablations and byte/compute accounting.
+4. Measure the actual target GPU. Reduce context/offload or model size when the
+   guard fails; a sampled guard is not a hard capacity guarantee.
+5. Expand paraphrases, multiple entities and sessions only after the above. No
+   MemGuide reproduction, general procedure/privacy solution, published-Titans
+   comparison, state-of-the-art result or continual-learning claim is established.
+
+Technical decisions, source/API verification and explicit departures from the
+supplied sketches: [docs/NATIVE_AGENT.md](docs/NATIVE_AGENT.md).
 
 ## Artifacts
 
-- [`results/figures/exp1_recall.png`](results/figures/exp1_recall.png)
-- [`results/exp1_log.csv`](results/exp1_log.csv)
-- [`results/manifest.json`](results/manifest.json)
-- [`results/statistics.json`](results/statistics.json)
-- `results/smoke/{summary,calibration,diagnostics,writes,aggregate}.csv`
-- [`notebooks/analysis.ipynb`](notebooks/analysis.ipynb)
+- `results/agent_smoke/{agent_log.csv,summary.csv,memory_hashes.json,manifest.json}`
+- `results/agent_real/{environment.json,manifest.json,stability_tests.json}`
+- `results/agent_log.csv` + `results/agent_manifest.json`: last **completed** run
+- `results/agent_attempt_manifest.json`: latest attempt, including failed runs
+- `results/stability_tests.json`: latest attempt's behavioral-test status
+- `PROCEDURES.md`: last completed run's explicitly labeled procedure export
+
+Re-running a mode replaces its generated outputs. Use `--output` for separate runs.

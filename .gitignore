@@ -8,3 +8,7 @@ results/runs/
 results/events/
 *.pt
 *.safetensors
+
+# Local agent model weights must not enter Git.
+*.gguf
+/local_models/

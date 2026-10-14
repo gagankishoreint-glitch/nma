@@ -1,0 +1,177 @@
+[
+  {
+    "method": "no_memory",
+    "seed": 0,
+    "before": null,
+    "after": null,
+    "updates": 0
+  },
+  {
+    "method": "context_window",
+    "seed": 0,
+    "before": null,
+    "after": null,
+    "updates": 0
+  },
+  {
+    "method": "neural_only",
+    "seed": 0,
+    "before": "9c864b3e32433e7acc609618b4c2484b46ac4fdd5b9cc780f0a5186bfd050686",
+    "after": "a0b63d88972461657f4f65db36cc246a24bac53298ccca4e4d70bb15e8a6ee9b",
+    "updates": 3
+  },
+  {
+    "method": "full_frozen_memory",
+    "seed": 0,
+    "before": "9c864b3e32433e7acc609618b4c2484b46ac4fdd5b9cc780f0a5186bfd050686",
+    "after": "9c864b3e32433e7acc609618b4c2484b46ac4fdd5b9cc780f0a5186bfd050686",
+    "updates": 0
+  },
+  {
+    "method": "full",
+    "seed": 0,
+    "before": "9c864b3e32433e7acc609618b4c2484b46ac4fdd5b9cc780f0a5186bfd050686",
+    "after": "a0b63d88972461657f4f65db36cc246a24bac53298ccca4e4d70bb15e8a6ee9b",
+    "updates": 3
+  },
+  {
+    "method": "no_memory",
+    "seed": 1,
+    "before": null,
+    "after": null,
+    "updates": 0
+  },
+  {
+    "method": "context_window",
+    "seed": 1,
+    "before": null,
+    "after": null,
+    "updates": 0
+  },
+  {
+    "method": "neural_only",
+    "seed": 1,
+    "before": "aeab5aff2db468f588c574374c4c787c93bd56932b4ca284453f2d5a27ab2289",
+    "after": "104a5ee02edde2dbf79aa678280c2b393ca645d0308604244960ba30e06a3f27",
+    "updates": 3
+  },
+  {
+    "method": "full_frozen_memory",
+    "seed": 1,
+    "before": "aeab5aff2db468f588c574374c4c787c93bd56932b4ca284453f2d5a27ab2289",
+    "after": "aeab5aff2db468f588c574374c4c787c93bd56932b4ca284453f2d5a27ab2289",
+    "updates": 0
+  },
+  {
+    "method": "full",
+    "seed": 1,
+    "before": "aeab5aff2db468f588c574374c4c787c93bd56932b4ca284453f2d5a27ab2289",
+    "after": "104a5ee02edde2dbf79aa678280c2b393ca645d0308604244960ba30e06a3f27",
+    "updates": 3
+  },
+  {
+    "method": "no_memory",
+    "seed": 2,
+    "before": null,
+    "after": null,
+    "updates": 0
+  },
+  {
+    "method": "context_window",
+    "seed": 2,
+    "before": null,
+    "after": null,
+    "updates": 0
+  },
+  {
+    "method": "neural_only",
+    "seed": 2,
+    "before": "53818924a98a6aed715fb1eec201d66b344ab998a361d57197a82e0de88e3a2e",
+    "after": "d91ec164d5452e33a66f3cfbba776bc5aa588f9545b7620d3794efb20f1bf352",
+    "updates": 3
+  },
+  {
+    "method": "full_frozen_memory",
+    "seed": 2,
+    "before": "53818924a98a6aed715fb1eec201d66b344ab998a361d57197a82e0de88e3a2e",
+    "after": "53818924a98a6aed715fb1eec201d66b344ab998a361d57197a82e0de88e3a2e",
+    "updates": 0
+  },
+  {
+    "method": "full",
+    "seed": 2,
+    "before": "53818924a98a6aed715fb1eec201d66b344ab998a361d57197a82e0de88e3a2e",
+    "after": "d91ec164d5452e33a66f3cfbba776bc5aa588f9545b7620d3794efb20f1bf352",
+    "updates": 3
+  },
+  {
+    "method": "no_memory",
+    "seed": 3,
+    "before": null,
+    "after": null,
+    "updates": 0
+  },
+  {
+    "method": "context_window",
+    "seed": 3,
+    "before": null,
+    "after": null,
+    "updates": 0
+  },
+  {
+    "method": "neural_only",
+    "seed": 3,
+    "before": "506297e0b55f167c7c8a3ad5de5f02a9681be876cf63c902fdd81f365e652239",
+    "after": "eeaed846d9ed0b8eefc621b9dcb0fe9f65d2a767351472196c63187fb8389fdd",
+    "updates": 3
+  },
+  {
+    "method": "full_frozen_memory",
+    "seed": 3,
+    "before": "506297e0b55f167c7c8a3ad5de5f02a9681be876cf63c902fdd81f365e652239",
+    "after": "506297e0b55f167c7c8a3ad5de5f02a9681be876cf63c902fdd81f365e652239",
+    "updates": 0
+  },
+  {
+    "method": "full",
+    "seed": 3,
+    "before": "506297e0b55f167c7c8a3ad5de5f02a9681be876cf63c902fdd81f365e652239",
+    "after": "eeaed846d9ed0b8eefc621b9dcb0fe9f65d2a767351472196c63187fb8389fdd",
+    "updates": 3
+  },
+  {
+    "method": "no_memory",
+    "seed": 4,
+    "before": null,
+    "after": null,
+    "updates": 0
+  },
+  {
+    "method": "context_window",
+    "seed": 4,
+    "before": null,
+    "after": null,
+    "updates": 0
+  },
+  {
+    "method": "neural_only",
+    "seed": 4,
+    "before": "254d9bb3f2307a1bf2cb75488e8523c6e82c36fead93cb23206b3354c51bc79c",
+    "after": "76112876d9c03ae1ac1cdb33b303bdc0427a0c501ceb405388e16e9537053bfd",
+    "updates": 3
+  },
+  {
+    "method": "full_frozen_memory",
+    "seed": 4,
+    "before": "254d9bb3f2307a1bf2cb75488e8523c6e82c36fead93cb23206b3354c51bc79c",
+    "after": "254d9bb3f2307a1bf2cb75488e8523c6e82c36fead93cb23206b3354c51bc79c",
+    "updates": 0
+  },
+  {
+    "method": "full",
+    "seed": 4,
+    "before": "254d9bb3f2307a1bf2cb75488e8523c6e82c36fead93cb23206b3354c51bc79c",
+    "after": "76112876d9c03ae1ac1cdb33b303bdc0427a0c501ceb405388e16e9537053bfd",
+    "updates": 3
+  }
+]

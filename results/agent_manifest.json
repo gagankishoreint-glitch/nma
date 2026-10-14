@@ -1,0 +1,965 @@
+{
+  "backend": "scripted",
+  "config": {
+    "backend": "scripted",
+    "model": null,
+    "encoder": null,
+    "output": null,
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "n_ctx": 1024,
+    "n_gpu_layers": 0,
+    "context_turns": 4,
+    "max_steps": 2
+  },
+  "environment": {
+    "torch": "2.2.2",
+    "llama-cpp-python": null,
+    "sentence-transformers": null,
+    "titans-torch": null,
+    "titans-pytorch": null,
+    "system_ram_total_mib": 3939.89453125,
+    "system_ram_available_mib": 3399.9375,
+    "gguf_files_in_repo": []
+  },
+  "python": "3.11.2",
+  "torch": "2.2.2+cu121",
+  "scope": "scripted plumbing only",
+  "status": "completed",
+  "encoder_backend": "hash_fixture",
+  "stability_gate": "not_applicable: scripted plumbing",
+  "memory_parameters": 90352,
+  "wall_seconds": 0.12007138000012674,
+  "resources": {
+    "gpu_peak_mib": null,
+    "gpu_available": false,
+    "budget_mib": 3584,
+    "sampling_interval_seconds": 0.1,
+    "note": "Device-total samples include other processes and can miss transient peaks; not a hard allocation cap.",
+    "samples": [
+      {
+        "stage": "environment",
+        "monotonic_seconds": 1824.137631788,
+        "gpu_device_used_mib": null,
+        "peak_device_used_mib": null,
+        "peak_process_rss_mib": 351.55859375,
+        "measurement": "GPU telemetry unavailable"
+      },
+      {
+        "stage": "encoder_loaded",
+        "monotonic_seconds": 1824.137667617,
+        "gpu_device_used_mib": null,
+        "peak_device_used_mib": null,
+        "peak_process_rss_mib": 351.55859375,
+        "measurement": "GPU telemetry unavailable"
+      },
+      {
+        "stage": "no_memory:seed0:agent_ready",
+        "monotonic_seconds": 1824.138308818,
+        "gpu_device_used_mib": null,
+        "peak_device_used_mib": null,
+        "peak_process_rss_mib": 351.55859375,
+        "measurement": "GPU telemetry unavailable"
+      },
+      {
+        "stage": "no_memory:seed0:session1:step0",
+        "monotonic_seconds": 1824.138420903,
+        "gpu_device_used_mib": null,
+        "peak_device_used_mib": null,
+        "peak_process_rss_mib": 351.55859375,
+        "measurement": "GPU telemetry unavailable"
+      },
+      {
+        "stage": "no_memory:seed0:session2:step0",
+        "monotonic_seconds": 1824.138528763,
+        "gpu_device_used_mib": null,
+        "peak_device_used_mib": null,
+        "peak_process_rss_mib": 351.55859375,
+        "measurement": "GPU telemetry unavailable"
+      },
+      {
+        "stage": "no_memory:seed0:session3:step0",
+        "monotonic_seconds": 1824.138604737,
+        "gpu_device_used_mib": null,
+        "peak_device_used_mib": null,
+        "peak_process_rss_mib": 351.55859375,
+        "measurement": "GPU telemetry unavailable"
+      },
+      {
+        "stage": "context_window:seed0:agent_ready",
+        "monotonic_seconds": 1824.138623093,
+        "gpu_device_used_mib": null,
+        "peak_device_used_mib": null,
+        "peak_process_rss_mib": 351.55859375,
+        "measurement": "GPU telemetry unavailable"
+      },
+      {
+        "stage": "context_window:seed0:session1:step0",
+        "monotonic_seconds": 1824.138704988,
+        "gpu_device_used_mib": null,
+        "peak_device_used_mib": null,
+        "peak_process_rss_mib": 351.55859375,
+        "measurement": "GPU telemetry unavailable"
+      },
+      {
+        "stage": "context_window:seed0:session2:step0",
+        "monotonic_seconds": 1824.138776996,
+        "gpu_device_used_mib": null,
+        "peak_device_used_mib": null,
+        "peak_process_rss_mib": 351.55859375,
+        "measurement": "GPU telemetry unavailable"
+      },
+      {
+        "stage": "context_window:seed0:session3:step0",
+        "monotonic_seconds": 1824.138878068,
+        "gpu_device_used_mib": null,
+        "peak_device_used_mib": null,
+        "peak_process_rss_mib": 351.55859375,
+        "measurement": "GPU telemetry unavailable"
+      },
+      {
+        "stage": "neural_only:seed0:agent_ready",
+        "monotonic_seconds": 1824.142054389,
+        "gpu_device_used_mib": null,
+        "peak_device_used_mib": null,
+        "peak_process_rss_mib": 355.71484375,
+        "measurement": "GPU telemetry unavailable"
+      },
+      {
+        "stage": "neural_only:seed0:session1:step0",
+        "monotonic_seconds": 1824.147244017,
+        "gpu_device_used_mib": null,
+        "peak_device_used_mib": null,
+        "peak_process_rss_mib": 369.96875,
+        "measurement": "GPU telemetry unavailable"
+      },
+      {
+        "stage": "neural_only:seed0:session2:step0",
+        "monotonic_seconds": 1824.149678705,
+        "gpu_device_used_mib": null,
+        "peak_device_used_mib": null,
+        "peak_process_rss_mib": 369.96875,
+        "measurement": "GPU telemetry unavailable"
+      },
+      {
+        "stage": "neural_only:seed0:session3:step0",
+        "monotonic_seconds": 1824.151345126,
+        "gpu_device_used_mib": null,
+        "peak_device_used_mib": null,
+        "peak_process_rss_mib": 369.96875,
+        "measurement": "GPU telemetry unavailable"
+      },
+      {
+        "stage": "full_frozen_memory:seed0:agent_ready",
+        "monotonic_seconds": 1824.154067631,
+        "gpu_device_used_mib": null,
+        "peak_device_used_mib": null,
+        "peak_process_rss_mib": 371.69140625,
+        "measurement": "GPU telemetry unavailable"
+      },
+      {
+        "stage": "full_frozen_memory:seed0:session1:step0",
+        "monotonic_seconds": 1824.15494717,
+        "gpu_device_used_mib": null,
+        "peak_device_used_mib": null,
+        "peak_process_rss_mib": 371.69140625,
+        "measurement": "GPU telemetry unavailable"
+      },
+      {
+        "stage": "full_frozen_memory:post_extraction",
+        "monotonic_seconds": 1824.155136446,
+        "gpu_device_used_mib": null,
+        "peak_device_used_mib": null,
+        "peak_process_rss_mib": 371.69140625,
+        "measurement": "GPU telemetry unavailable"
+      },
+      {
+        "stage": "full_frozen_memory:seed0:session2:step0",
+        "monotonic_seconds": 1824.156247749,
+        "gpu_device_used_mib": null,
+        "peak_device_used_mib": null,
+        "peak_process_rss_mib": 371.69140625,
+        "measurement": "GPU telemetry unavailable"
+      },
+      {
+        "stage": "full_frozen_memory:seed0:session3:step0",
+        "monotonic_seconds": 1824.157343547,
+        "gpu_device_used_mib": null,
+        "peak_device_used_mib": null,
+        "peak_process_rss_mib": 371.69140625,
+        "measurement": "GPU telemetry unavailable"
+      },
+      {
+        "stage": "full:seed0:agent_ready",
+        "monotonic_seconds": 1824.159795425,
+        "gpu_device_used_mib": null,
+        "peak_device_used_mib": null,
+        "peak_process_rss_mib": 371.94921875,
+        "measurement": "GPU telemetry unavailable"
+      },
+      {
+        "stage": "full:seed0:session1:step0",
+        "monotonic_seconds": 1824.162069789,
+        "gpu_device_used_mib": null,
+        "peak_device_used_mib": null,
+        "peak_process_rss_mib": 371.94921875,
+        "measurement": "GPU telemetry unavailable"
+      },
+      {
+        "stage": "full:post_extraction",
+        "monotonic_seconds": 1824.162274907,
+        "gpu_device_used_mib": null,
+        "peak_device_used_mib": null,
+        "peak_process_rss_mib": 371.94921875,
+        "measurement": "GPU telemetry unavailable"
+      },
+      {
+        "stage": "full:seed0:session2:step0",
+        "monotonic_seconds": 1824.163935346,
+        "gpu_device_used_mib": null,
+        "peak_device_used_mib": null,
+        "peak_process_rss_mib": 371.94921875,
+        "measurement": "GPU telemetry unavailable"
+      },
+      {
+        "stage": "full:seed0:session3:step0",
+        "monotonic_seconds": 1824.165705551,
+        "gpu_device_used_mib": null,
+        "peak_device_used_mib": null,
+        "peak_process_rss_mib": 371.94921875,
+        "measurement": "GPU telemetry unavailable"
+      },
+      {
+        "stage": "no_memory:seed1:agent_ready",
+        "monotonic_seconds": 1824.166200208,
+        "gpu_device_used_mib": null,
+        "peak_device_used_mib": null,
+        "peak_process_rss_mib": 371.94921875,
+        "measurement": "GPU telemetry unavailable"
+      },
+      {
+        "stage": "no_memory:seed1:session1:step0",
+        "monotonic_seconds": 1824.166314858,
+        "gpu_device_used_mib": null,
+        "peak_device_used_mib": null,
+        "peak_process_rss_mib": 371.94921875,
+        "measurement": "GPU telemetry unavailable"
+      },
+      {
+        "stage": "no_memory:seed1:session2:step0",
+        "monotonic_seconds": 1824.166380219,
+        "gpu_device_used_mib": null,
+        "peak_device_used_mib": null,
+        "peak_process_rss_mib": 371.94921875,
+        "measurement": "GPU telemetry unavailable"
+      },
+      {
+        "stage": "no_memory:seed1:session3:step0",
+        "monotonic_seconds": 1824.166439744,
+        "gpu_device_used_mib": null,
+        "peak_device_used_mib": null,
+        "peak_process_rss_mib": 371.94921875,
+        "measurement": "GPU telemetry unavailable"
+      },
+      {
+        "stage": "context_window:seed1:agent_ready",
+        "monotonic_seconds": 1824.166454153,
+        "gpu_device_used_mib": null,
+        "peak_device_used_mib": null,
+        "peak_process_rss_mib": 371.94921875,
+        "measurement": "GPU telemetry unavailable"
+      },
+      {
+        "stage": "context_window:seed1:session1:step0",
+        "monotonic_seconds": 1824.166562667,
+        "gpu_device_used_mib": null,
+        "peak_device_used_mib": null,
+        "peak_process_rss_mib": 371.94921875,
+        "measurement": "GPU telemetry unavailable"
+      },
+      {
+        "stage": "context_window:seed1:session2:step0",
+        "monotonic_seconds": 1824.166639121,
+        "gpu_device_used_mib": null,
+        "peak_device_used_mib": null,
+        "peak_process_rss_mib": 371.94921875,
+        "measurement": "GPU telemetry unavailable"
+      },
+      {
+        "stage": "context_window:seed1:session3:step0",
+        "monotonic_seconds": 1824.166719578,
+        "gpu_device_used_mib": null,
+        "peak_device_used_mib": null,
+        "peak_process_rss_mib": 371.94921875,
+        "measurement": "GPU telemetry unavailable"
+      },
+      {
+        "stage": "neural_only:seed1:agent_ready",
+        "monotonic_seconds": 1824.16841133,
+        "gpu_device_used_mib": null,
+        "peak_device_used_mib": null,
+        "peak_process_rss_mib": 371.94921875,
+        "measurement": "GPU telemetry unavailable"
+      },
+      {
+        "stage": "neural_only:seed1:session1:step0",
+        "monotonic_seconds": 1824.170812096,
+        "gpu_device_used_mib": null,
+        "peak_device_used_mib": null,
+        "peak_process_rss_mib": 371.94921875,
+        "measurement": "GPU telemetry unavailable"
+      },
+      {
+        "stage": "neural_only:seed1:session2:step0",
+        "monotonic_seconds": 1824.172810223,
+        "gpu_device_used_mib": null,
+        "peak_device_used_mib": null,
+        "peak_process_rss_mib": 371.94921875,
+        "measurement": "GPU telemetry unavailable"
+      },
+      {
+        "stage": "neural_only:seed1:session3:step0",
+        "monotonic_seconds": 1824.174525536,
+        "gpu_device_used_mib": null,
+        "peak_device_used_mib": null,
+        "peak_process_rss_mib": 371.94921875,
+        "measurement": "GPU telemetry unavailable"
+      },
+      {
+        "stage": "full_frozen_memory:seed1:agent_ready",
+        "monotonic_seconds": 1824.17693605,
+        "gpu_device_used_mib": null,
+        "peak_device_used_mib": null,
+        "peak_process_rss_mib": 371.94921875,
+        "measurement": "GPU telemetry unavailable"
+      },
+      {
+        "stage": "full_frozen_memory:seed1:session1:step0",
+        "monotonic_seconds": 1824.177800473,
+        "gpu_device_used_mib": null,
+        "peak_device_used_mib": null,
+        "peak_process_rss_mib": 371.94921875,
+        "measurement": "GPU telemetry unavailable"
+      },
+      {
+        "stage": "full_frozen_memory:post_extraction",
+        "monotonic_seconds": 1824.177972965,
+        "gpu_device_used_mib": null,
+        "peak_device_used_mib": null,
+        "peak_process_rss_mib": 371.94921875,
+        "measurement": "GPU telemetry unavailable"
+      },
+      {
+        "stage": "full_frozen_memory:seed1:session2:step0",
+        "monotonic_seconds": 1824.178926909,
+        "gpu_device_used_mib": null,
+        "peak_device_used_mib": null,
+        "peak_process_rss_mib": 371.94921875,
+        "measurement": "GPU telemetry unavailable"
+      },
+      {
+        "stage": "full_frozen_memory:seed1:session3:step0",
+        "monotonic_seconds": 1824.179798925,
+        "gpu_device_used_mib": null,
+        "peak_device_used_mib": null,
+        "peak_process_rss_mib": 371.94921875,
+        "measurement": "GPU telemetry unavailable"
+      },
+      {
+        "stage": "full:seed1:agent_ready",
+        "monotonic_seconds": 1824.182218917,
+        "gpu_device_used_mib": null,
+        "peak_device_used_mib": null,
+        "peak_process_rss_mib": 371.94921875,
+        "measurement": "GPU telemetry unavailable"
+      },
+      {
+        "stage": "full:seed1:session1:step0",
+        "monotonic_seconds": 1824.1844506,
+        "gpu_device_used_mib": null,
+        "peak_device_used_mib": null,
+        "peak_process_rss_mib": 371.94921875,
+        "measurement": "GPU telemetry unavailable"
+      },
+      {
+        "stage": "full:post_extraction",
+        "monotonic_seconds": 1824.184697175,
+        "gpu_device_used_mib": null,
+        "peak_device_used_mib": null,
+        "peak_process_rss_mib": 371.94921875,
+        "measurement": "GPU telemetry unavailable"
+      },
+      {
+        "stage": "full:seed1:session2:step0",
+        "monotonic_seconds": 1824.186294732,
+        "gpu_device_used_mib": null,
+        "peak_device_used_mib": null,
+        "peak_process_rss_mib": 371.94921875,
+        "measurement": "GPU telemetry unavailable"
+      },
+      {
+        "stage": "full:seed1:session3:step0",
+        "monotonic_seconds": 1824.188059514,
+        "gpu_device_used_mib": null,
+        "peak_device_used_mib": null,
+        "peak_process_rss_mib": 371.94921875,
+        "measurement": "GPU telemetry unavailable"
+      },
+      {
+        "stage": "no_memory:seed2:agent_ready",
+        "monotonic_seconds": 1824.188661893,
+        "gpu_device_used_mib": null,
+        "peak_device_used_mib": null,
+        "peak_process_rss_mib": 371.94921875,
+        "measurement": "GPU telemetry unavailable"
+      },
+      {
+        "stage": "no_memory:seed2:session1:step0",
+        "monotonic_seconds": 1824.188778624,
+        "gpu_device_used_mib": null,
+        "peak_device_used_mib": null,
+        "peak_process_rss_mib": 371.94921875,
+        "measurement": "GPU telemetry unavailable"
+      },
+      {
+        "stage": "no_memory:seed2:session2:step0",
+        "monotonic_seconds": 1824.18884421,
+        "gpu_device_used_mib": null,
+        "peak_device_used_mib": null,
+        "peak_process_rss_mib": 371.94921875,
+        "measurement": "GPU telemetry unavailable"
+      },
+      {
+        "stage": "no_memory:seed2:session3:step0",
+        "monotonic_seconds": 1824.188897765,
+        "gpu_device_used_mib": null,
+        "peak_device_used_mib": null,
+        "peak_process_rss_mib": 371.94921875,
+        "measurement": "GPU telemetry unavailable"
+      },
+      {
+        "stage": "context_window:seed2:agent_ready",
+        "monotonic_seconds": 1824.188910888,
+        "gpu_device_used_mib": null,
+        "peak_device_used_mib": null,
+        "peak_process_rss_mib": 371.94921875,
+        "measurement": "GPU telemetry unavailable"
+      },
+      {
+        "stage": "context_window:seed2:session1:step0",
+        "monotonic_seconds": 1824.188979502,
+        "gpu_device_used_mib": null,
+        "peak_device_used_mib": null,
+        "peak_process_rss_mib": 371.94921875,
+        "measurement": "GPU telemetry unavailable"
+      },
+      {
+        "stage": "context_window:seed2:session2:step0",
+        "monotonic_seconds": 1824.189045393,
+        "gpu_device_used_mib": null,
+        "peak_device_used_mib": null,
+        "peak_process_rss_mib": 371.94921875,
+        "measurement": "GPU telemetry unavailable"
+      },
+      {
+        "stage": "context_window:seed2:session3:step0",
+        "monotonic_seconds": 1824.189124518,
+        "gpu_device_used_mib": null,
+        "peak_device_used_mib": null,
+        "peak_process_rss_mib": 371.94921875,
+        "measurement": "GPU telemetry unavailable"
+      },
+      {
+        "stage": "neural_only:seed2:agent_ready",
+        "monotonic_seconds": 1824.190698511,
+        "gpu_device_used_mib": null,
+        "peak_device_used_mib": null,
+        "peak_process_rss_mib": 371.94921875,
+        "measurement": "GPU telemetry unavailable"
+      },
+      {
+        "stage": "neural_only:seed2:session1:step0",
+        "monotonic_seconds": 1824.192891605,
+        "gpu_device_used_mib": null,
+        "peak_device_used_mib": null,
+        "peak_process_rss_mib": 371.94921875,
+        "measurement": "GPU telemetry unavailable"
+      },
+      {
+        "stage": "neural_only:seed2:session2:step0",
+        "monotonic_seconds": 1824.194802899,
+        "gpu_device_used_mib": null,
+        "peak_device_used_mib": null,
+        "peak_process_rss_mib": 371.94921875,
+        "measurement": "GPU telemetry unavailable"
+      },
+      {
+        "stage": "neural_only:seed2:session3:step0",
+        "monotonic_seconds": 1824.196510005,
+        "gpu_device_used_mib": null,
+        "peak_device_used_mib": null,
+        "peak_process_rss_mib": 371.94921875,
+        "measurement": "GPU telemetry unavailable"
+      },
+      {
+        "stage": "full_frozen_memory:seed2:agent_ready",
+        "monotonic_seconds": 1824.198905919,
+        "gpu_device_used_mib": null,
+        "peak_device_used_mib": null,
+        "peak_process_rss_mib": 371.94921875,
+        "measurement": "GPU telemetry unavailable"
+      },
+      {
+        "stage": "full_frozen_memory:seed2:session1:step0",
+        "monotonic_seconds": 1824.199772749,
+        "gpu_device_used_mib": null,
+        "peak_device_used_mib": null,
+        "peak_process_rss_mib": 371.94921875,
+        "measurement": "GPU telemetry unavailable"
+      },
+      {
+        "stage": "full_frozen_memory:post_extraction",
+        "monotonic_seconds": 1824.199934811,
+        "gpu_device_used_mib": null,
+        "peak_device_used_mib": null,
+        "peak_process_rss_mib": 371.94921875,
+        "measurement": "GPU telemetry unavailable"
+      },
+      {
+        "stage": "full_frozen_memory:seed2:session2:step0",
+        "monotonic_seconds": 1824.200977184,
+        "gpu_device_used_mib": null,
+        "peak_device_used_mib": null,
+        "peak_process_rss_mib": 371.94921875,
+        "measurement": "GPU telemetry unavailable"
+      },
+      {
+        "stage": "full_frozen_memory:seed2:session3:step0",
+        "monotonic_seconds": 1824.201841473,
+        "gpu_device_used_mib": null,
+        "peak_device_used_mib": null,
+        "peak_process_rss_mib": 371.94921875,
+        "measurement": "GPU telemetry unavailable"
+      },
+      {
+        "stage": "full:seed2:agent_ready",
+        "monotonic_seconds": 1824.203989263,
+        "gpu_device_used_mib": null,
+        "peak_device_used_mib": null,
+        "peak_process_rss_mib": 371.94921875,
+        "measurement": "GPU telemetry unavailable"
+      },
+      {
+        "stage": "full:seed2:session1:step0",
+        "monotonic_seconds": 1824.206196047,
+        "gpu_device_used_mib": null,
+        "peak_device_used_mib": null,
+        "peak_process_rss_mib": 372.13671875,
+        "measurement": "GPU telemetry unavailable"
+      },
+      {
+        "stage": "full:post_extraction",
+        "monotonic_seconds": 1824.206385225,
+        "gpu_device_used_mib": null,
+        "peak_device_used_mib": null,
+        "peak_process_rss_mib": 372.13671875,
+        "measurement": "GPU telemetry unavailable"
+      },
+      {
+        "stage": "full:seed2:session2:step0",
+        "monotonic_seconds": 1824.208147975,
+        "gpu_device_used_mib": null,
+        "peak_device_used_mib": null,
+        "peak_process_rss_mib": 372.13671875,
+        "measurement": "GPU telemetry unavailable"
+      },
+      {
+        "stage": "full:seed2:session3:step0",
+        "monotonic_seconds": 1824.20991568,
+        "gpu_device_used_mib": null,
+        "peak_device_used_mib": null,
+        "peak_process_rss_mib": 372.13671875,
+        "measurement": "GPU telemetry unavailable"
+      },
+      {
+        "stage": "no_memory:seed3:agent_ready",
+        "monotonic_seconds": 1824.210437687,
+        "gpu_device_used_mib": null,
+        "peak_device_used_mib": null,
+        "peak_process_rss_mib": 372.13671875,
+        "measurement": "GPU telemetry unavailable"
+      },
+      {
+        "stage": "no_memory:seed3:session1:step0",
+        "monotonic_seconds": 1824.210589507,
+        "gpu_device_used_mib": null,
+        "peak_device_used_mib": null,
+        "peak_process_rss_mib": 372.13671875,
+        "measurement": "GPU telemetry unavailable"
+      },
+      {
+        "stage": "no_memory:seed3:session2:step0",
+        "monotonic_seconds": 1824.210666937,
+        "gpu_device_used_mib": null,
+        "peak_device_used_mib": null,
+        "peak_process_rss_mib": 372.13671875,
+        "measurement": "GPU telemetry unavailable"
+      },
+      {
+        "stage": "no_memory:seed3:session3:step0",
+        "monotonic_seconds": 1824.2107261,
+        "gpu_device_used_mib": null,
+        "peak_device_used_mib": null,
+        "peak_process_rss_mib": 372.13671875,
+        "measurement": "GPU telemetry unavailable"
+      },
+      {
+        "stage": "context_window:seed3:agent_ready",
+        "monotonic_seconds": 1824.210740418,
+        "gpu_device_used_mib": null,
+        "peak_device_used_mib": null,
+        "peak_process_rss_mib": 372.13671875,
+        "measurement": "GPU telemetry unavailable"
+      },
+      {
+        "stage": "context_window:seed3:session1:step0",
+        "monotonic_seconds": 1824.210809335,
+        "gpu_device_used_mib": null,
+        "peak_device_used_mib": null,
+        "peak_process_rss_mib": 372.13671875,
+        "measurement": "GPU telemetry unavailable"
+      },
+      {
+        "stage": "context_window:seed3:session2:step0",
+        "monotonic_seconds": 1824.210874796,
+        "gpu_device_used_mib": null,
+        "peak_device_used_mib": null,
+        "peak_process_rss_mib": 372.13671875,
+        "measurement": "GPU telemetry unavailable"
+      },
+      {
+        "stage": "context_window:seed3:session3:step0",
+        "monotonic_seconds": 1824.21095175,
+        "gpu_device_used_mib": null,
+        "peak_device_used_mib": null,
+        "peak_process_rss_mib": 372.13671875,
+        "measurement": "GPU telemetry unavailable"
+      },
+      {
+        "stage": "neural_only:seed3:agent_ready",
+        "monotonic_seconds": 1824.212657506,
+        "gpu_device_used_mib": null,
+        "peak_device_used_mib": null,
+        "peak_process_rss_mib": 372.13671875,
+        "measurement": "GPU telemetry unavailable"
+      },
+      {
+        "stage": "neural_only:seed3:session1:step0",
+        "monotonic_seconds": 1824.215027812,
+        "gpu_device_used_mib": null,
+        "peak_device_used_mib": null,
+        "peak_process_rss_mib": 372.13671875,
+        "measurement": "GPU telemetry unavailable"
+      },
+      {
+        "stage": "neural_only:seed3:session2:step0",
+        "monotonic_seconds": 1824.21686696,
+        "gpu_device_used_mib": null,
+        "peak_device_used_mib": null,
+        "peak_process_rss_mib": 372.13671875,
+        "measurement": "GPU telemetry unavailable"
+      },
+      {
+        "stage": "neural_only:seed3:session3:step0",
+        "monotonic_seconds": 1824.218463888,
+        "gpu_device_used_mib": null,
+        "peak_device_used_mib": null,
+        "peak_process_rss_mib": 372.13671875,
+        "measurement": "GPU telemetry unavailable"
+      },
+      {
+        "stage": "full_frozen_memory:seed3:agent_ready",
+        "monotonic_seconds": 1824.220849261,
+        "gpu_device_used_mib": null,
+        "peak_device_used_mib": null,
+        "peak_process_rss_mib": 372.13671875,
+        "measurement": "GPU telemetry unavailable"
+      },
+      {
+        "stage": "full_frozen_memory:seed3:session1:step0",
+        "monotonic_seconds": 1824.221705319,
+        "gpu_device_used_mib": null,
+        "peak_device_used_mib": null,
+        "peak_process_rss_mib": 372.13671875,
+        "measurement": "GPU telemetry unavailable"
+      },
+      {
+        "stage": "full_frozen_memory:post_extraction",
+        "monotonic_seconds": 1824.221882556,
+        "gpu_device_used_mib": null,
+        "peak_device_used_mib": null,
+        "peak_process_rss_mib": 372.13671875,
+        "measurement": "GPU telemetry unavailable"
+      },
+      {
+        "stage": "full_frozen_memory:seed3:session2:step0",
+        "monotonic_seconds": 1824.222896784,
+        "gpu_device_used_mib": null,
+        "peak_device_used_mib": null,
+        "peak_process_rss_mib": 372.13671875,
+        "measurement": "GPU telemetry unavailable"
+      },
+      {
+        "stage": "full_frozen_memory:seed3:session3:step0",
+        "monotonic_seconds": 1824.223794798,
+        "gpu_device_used_mib": null,
+        "peak_device_used_mib": null,
+        "peak_process_rss_mib": 372.13671875,
+        "measurement": "GPU telemetry unavailable"
+      },
+      {
+        "stage": "full:seed3:agent_ready",
+        "monotonic_seconds": 1824.226053025,
+        "gpu_device_used_mib": null,
+        "peak_device_used_mib": null,
+        "peak_process_rss_mib": 372.13671875,
+        "measurement": "GPU telemetry unavailable"
+      },
+      {
+        "stage": "full:seed3:session1:step0",
+        "monotonic_seconds": 1824.228474295,
+        "gpu_device_used_mib": null,
+        "peak_device_used_mib": null,
+        "peak_process_rss_mib": 372.27734375,
+        "measurement": "GPU telemetry unavailable"
+      },
+      {
+        "stage": "full:post_extraction",
+        "monotonic_seconds": 1824.228659473,
+        "gpu_device_used_mib": null,
+        "peak_device_used_mib": null,
+        "peak_process_rss_mib": 372.27734375,
+        "measurement": "GPU telemetry unavailable"
+      },
+      {
+        "stage": "full:seed3:session2:step0",
+        "monotonic_seconds": 1824.230243105,
+        "gpu_device_used_mib": null,
+        "peak_device_used_mib": null,
+        "peak_process_rss_mib": 372.27734375,
+        "measurement": "GPU telemetry unavailable"
+      },
+      {
+        "stage": "full:seed3:session3:step0",
+        "monotonic_seconds": 1824.231878095,
+        "gpu_device_used_mib": null,
+        "peak_device_used_mib": null,
+        "peak_process_rss_mib": 372.27734375,
+        "measurement": "GPU telemetry unavailable"
+      },
+      {
+        "stage": "no_memory:seed4:agent_ready",
+        "monotonic_seconds": 1824.232448099,
+        "gpu_device_used_mib": null,
+        "peak_device_used_mib": null,
+        "peak_process_rss_mib": 372.27734375,
+        "measurement": "GPU telemetry unavailable"
+      },
+      {
+        "stage": "no_memory:seed4:session1:step0",
+        "monotonic_seconds": 1824.232599192,
+        "gpu_device_used_mib": null,
+        "peak_device_used_mib": null,
+        "peak_process_rss_mib": 372.27734375,
+        "measurement": "GPU telemetry unavailable"
+      },
+      {
+        "stage": "no_memory:seed4:session2:step0",
+        "monotonic_seconds": 1824.232665829,
+        "gpu_device_used_mib": null,
+        "peak_device_used_mib": null,
+        "peak_process_rss_mib": 372.27734375,
+        "measurement": "GPU telemetry unavailable"
+      },
+      {
+        "stage": "no_memory:seed4:session3:step0",
+        "monotonic_seconds": 1824.23272178,
+        "gpu_device_used_mib": null,
+        "peak_device_used_mib": null,
+        "peak_process_rss_mib": 372.27734375,
+        "measurement": "GPU telemetry unavailable"
+      },
+      {
+        "stage": "context_window:seed4:agent_ready",
+        "monotonic_seconds": 1824.232738418,
+        "gpu_device_used_mib": null,
+        "peak_device_used_mib": null,
+        "peak_process_rss_mib": 372.27734375,
+        "measurement": "GPU telemetry unavailable"
+      },
+      {
+        "stage": "context_window:seed4:session1:step0",
+        "monotonic_seconds": 1824.232805004,
+        "gpu_device_used_mib": null,
+        "peak_device_used_mib": null,
+        "peak_process_rss_mib": 372.27734375,
+        "measurement": "GPU telemetry unavailable"
+      },
+      {
+        "stage": "context_window:seed4:session2:step0",
+        "monotonic_seconds": 1824.232870349,
+        "gpu_device_used_mib": null,
+        "peak_device_used_mib": null,
+        "peak_process_rss_mib": 372.27734375,
+        "measurement": "GPU telemetry unavailable"
+      },
+      {
+        "stage": "context_window:seed4:session3:step0",
+        "monotonic_seconds": 1824.232947989,
+        "gpu_device_used_mib": null,
+        "peak_device_used_mib": null,
+        "peak_process_rss_mib": 372.27734375,
+        "measurement": "GPU telemetry unavailable"
+      },
+      {
+        "stage": "neural_only:seed4:agent_ready",
+        "monotonic_seconds": 1824.234624682,
+        "gpu_device_used_mib": null,
+        "peak_device_used_mib": null,
+        "peak_process_rss_mib": 372.27734375,
+        "measurement": "GPU telemetry unavailable"
+      },
+      {
+        "stage": "neural_only:seed4:session1:step0",
+        "monotonic_seconds": 1824.236986518,
+        "gpu_device_used_mib": null,
+        "peak_device_used_mib": null,
+        "peak_process_rss_mib": 372.27734375,
+        "measurement": "GPU telemetry unavailable"
+      },
+      {
+        "stage": "neural_only:seed4:session2:step0",
+        "monotonic_seconds": 1824.23870932,
+        "gpu_device_used_mib": null,
+        "peak_device_used_mib": null,
+        "peak_process_rss_mib": 372.27734375,
+        "measurement": "GPU telemetry unavailable"
+      },
+      {
+        "stage": "neural_only:seed4:session3:step0",
+        "monotonic_seconds": 1824.240440344,
+        "gpu_device_used_mib": null,
+        "peak_device_used_mib": null,
+        "peak_process_rss_mib": 372.27734375,
+        "measurement": "GPU telemetry unavailable"
+      },
+      {
+        "stage": "full_frozen_memory:seed4:agent_ready",
+        "monotonic_seconds": 1824.242819315,
+        "gpu_device_used_mib": null,
+        "peak_device_used_mib": null,
+        "peak_process_rss_mib": 372.27734375,
+        "measurement": "GPU telemetry unavailable"
+      },
+      {
+        "stage": "full_frozen_memory:seed4:session1:step0",
+        "monotonic_seconds": 1824.243633321,
+        "gpu_device_used_mib": null,
+        "peak_device_used_mib": null,
+        "peak_process_rss_mib": 372.27734375,
+        "measurement": "GPU telemetry unavailable"
+      },
+      {
+        "stage": "full_frozen_memory:post_extraction",
+        "monotonic_seconds": 1824.243798869,
+        "gpu_device_used_mib": null,
+        "peak_device_used_mib": null,
+        "peak_process_rss_mib": 372.27734375,
+        "measurement": "GPU telemetry unavailable"
+      },
+      {
+        "stage": "full_frozen_memory:seed4:session2:step0",
+        "monotonic_seconds": 1824.244859008,
+        "gpu_device_used_mib": null,
+        "peak_device_used_mib": null,
+        "peak_process_rss_mib": 372.27734375,
+        "measurement": "GPU telemetry unavailable"
+      },
+      {
+        "stage": "full_frozen_memory:seed4:session3:step0",
+        "monotonic_seconds": 1824.245707019,
+        "gpu_device_used_mib": null,
+        "peak_device_used_mib": null,
+        "peak_process_rss_mib": 372.27734375,
+        "measurement": "GPU telemetry unavailable"
+      },
+      {
+        "stage": "full:seed4:agent_ready",
+        "monotonic_seconds": 1824.24778519,
+        "gpu_device_used_mib": null,
+        "peak_device_used_mib": null,
+        "peak_process_rss_mib": 372.27734375,
+        "measurement": "GPU telemetry unavailable"
+      },
+      {
+        "stage": "full:seed4:session1:step0",
+        "monotonic_seconds": 1824.250006571,
+        "gpu_device_used_mib": null,
+        "peak_device_used_mib": null,
+        "peak_process_rss_mib": 372.31640625,
+        "measurement": "GPU telemetry unavailable"
+      },
+      {
+        "stage": "full:post_extraction",
+        "monotonic_seconds": 1824.25019059,
+        "gpu_device_used_mib": null,
+        "peak_device_used_mib": null,
+        "peak_process_rss_mib": 372.31640625,
+        "measurement": "GPU telemetry unavailable"
+      },
+      {
+        "stage": "full:seed4:session2:step0",
+        "monotonic_seconds": 1824.251912579,
+        "gpu_device_used_mib": null,
+        "peak_device_used_mib": null,
+        "peak_process_rss_mib": 372.31640625,
+        "measurement": "GPU telemetry unavailable"
+      },
+      {
+        "stage": "full:seed4:session3:step0",
+        "monotonic_seconds": 1824.253686704,
+        "gpu_device_used_mib": null,
+        "peak_device_used_mib": null,
+        "peak_process_rss_mib": 372.31640625,
+        "measurement": "GPU telemetry unavailable"
+      }
+    ],
+    "telemetry_errors": []
+  },
+  "source_sha256": {
+    "memory/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "memory/encoder_bridge.py": "dec8f09e4b60e37617af69a68cf0fc25c252cc260be89c9a3fae690ff9512021",
+    "memory/orchestrator.py": "ed0ab4155555bfa21a36a437705b0626de1725a9f7d02ea643f98045eef54138",
+    "memory/procedures.py": "8776f8ade9c2d0c62424eb5c7ef4b6291fe66e4f33f33eda5574f7e87319d807",
+    "memory/titans_memory.py": "67db126e21f23c38fa773dc1d36edf351a470ce88b5c8a9e0e977518fb7df08c",
+    "llm/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "llm/scripted.py": "83333cae00c4645e2cb35d6e99bfdf01e96abfd1096f92f481c4c74eec9bd328",
+    "llm/stable_llm.py": "1823a5714315c04663df3db737cb077ac3ea12d34f285ca7965e8f67c88d7949",
+    "prompts/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "prompts/agent_system.txt": "4e8e11e24a79fc4e1d190c7f8a10987f8f6aaf1c4bece6edea177ea75c3e2f24",
+    "prompts/context.py": "bbd9ed0e2f5a3cab11a8c79b6b2c3e9b7b7a6e039357f9f6dceb429b0a4f4de7",
+    "prompts/procedure_extraction.py": "fac1f0ece95adb8070a81acbc1ca2b153c3b809e5490cf8f806e1e46c0acb571",
+    "agent.py": "48fbd5ef2a7fb6e674554e0ab373eec9423941f7fb9ff4a65efb2eb8c7565e95",
+    "MISSION.md": "12c88276e645fad3e847f25584000a7169c700fd3e0dd24682e549a8f96aca8f",
+    "requirements-agent.txt": "433ab9531f498cca38085ad4d6abb91e0e0158b88f802f987d2c19b3137006e9",
+    "scripts/run_agent.sh": "e419c6838e81095b3fae6df9b869d5746187ff34e682f1083495289fc57a0e66",
+    "src/data/restaurant_task.py": "431e6e1519e055c3f6c29cc071dc4fb9d8b2bdee9e2fb7a7593639eeda96b33c",
+    "src/eval/agent_stability.py": "94a500008ce039e05a2b65082307b837582146ef09fb3ec1b5ffea91a17cb52b",
+    "src/utils/agent_profile.py": "a7372c11eebd7649ba946a8f3e9327aed131e3c55f5094e931cf8050ee590edb"
+  }
+}

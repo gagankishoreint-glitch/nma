@@ -1,0 +1,14 @@
+{
+  "domain": "restaurant_booking",
+  "trigger": "A table booking is requested.",
+  "steps": [
+    "Read the selected restaurant name from available evidence.",
+    "Ask for missing information before attempting a booking.",
+    "Submit a booking and check the tool outcome."
+  ],
+  "alternatives": {},
+  "traps": [
+    "A booking without the selected restaurant name is unsupported."
+  ],
+  "kappa": 1
+}
